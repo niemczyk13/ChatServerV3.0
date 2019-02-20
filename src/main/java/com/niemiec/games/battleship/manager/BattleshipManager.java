@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.niemiec.games.battleship.game.Battleship;
 import com.niemiec.games.battleship.game.objects.Player;
 import com.niemiec.games.battleship.game.objects.PlayerImpl;
+import com.niemiec.games.battleship.messages.BattleshipGame;
 
 public class BattleshipManager {
 	private ArrayList<Battleship> battleships;

@@ -1,7 +1,9 @@
 package com.niemiec.connections;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -11,10 +13,14 @@ public class InputOutputStream {
 	private ObjectInputStream inputStream;
 	private ObjectOutputStream outputStream;
 	
+//	private BufferedReader reader;
+	
 	public InputOutputStream(Socket socket) {
 		this.socket = socket;
 		createOutputStream();
 		createInputStream();
+		
+//		this.reader = new BufferedReader(new InputStreamReader(System.in));
 	}
 	
 	public void sendTheObject(Object object) {
@@ -31,6 +37,13 @@ public class InputOutputStream {
 			return inputStream.readObject();
 		} catch (Exception e) {
 			System.out.println("Błąd odbierania danych: " + e);
+//			String line = null;
+//			try {
+//				line = reader.readLine();
+//			} catch (IOException e1) {
+//				// TODO Auto-generated catch block
+//				e1.printStackTrace();
+//			}
 		}
 		return null;
 	}

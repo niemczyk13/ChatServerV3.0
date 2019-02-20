@@ -1,6 +1,7 @@
 package com.niemiec.games.battleship.manager;
 
 import com.niemiec.games.battleship.game.Battleship;
+import com.niemiec.games.battleship.messages.BattleshipGame;
 import com.niemiec.objects.managers.ClientThreadManager;
 
 public class BattleshipManagementServer {

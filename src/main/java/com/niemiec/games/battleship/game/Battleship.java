@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import com.niemiec.games.battleship.game.logic.ShotShip;
 import com.niemiec.games.battleship.game.objects.Player;
-import com.niemiec.games.battleship.manager.BattleshipGame;
+import com.niemiec.games.battleship.messages.BattleshipGame;
 
 public class Battleship {
 	private final int FIRST_PLAYER = 0;
