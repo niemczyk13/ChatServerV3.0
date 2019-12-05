@@ -38,15 +38,34 @@ public class Battleship {
 	}
 
 	public void addPlayer(Player player) {
-		if (players.size() < 2) {
-			nicks[players.size()] = player.getNick();
-			players.put(player.getNick(), player);
+		if (thereAreLessThanTwoPlayers()) {
+			addPlayerToHashMap(player);
 		}
-		if (players.size() == 2) {
-			shotShip.addPlayers(players.get(nicks[0]), players.get(nicks[1]));
+		if (allPlayersHaveBeenAdded()) {
+			addPlayersToShotShip();
 		}
 	}
 	
+	private void addPlayerToHashMap(Player player) {
+		int currentNumberOfPlayers = players.size();
+		nicks[currentNumberOfPlayers] = player.getNick();
+		players.put(player.getNick(), player);
+	}
+
+	private void addPlayersToShotShip() {
+		String nickFirstPlayer = nicks[0];
+		String nickSecondPlayer = nicks[1];
+		shotShip.addPlayers(players.get(nickFirstPlayer), players.get(nickSecondPlayer));
+	}
+
+	private boolean allPlayersHaveBeenAdded() {
+		return players.size() == 2;
+	}
+
+	private boolean thereAreLessThanTwoPlayers() {
+		return players.size() < 2;
+	}
+
 	public String getNickFirstPlayer() {
 		return nicks[FIRST_PLAYER];
 	}
